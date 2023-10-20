@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<INPUT type="button" class = "buttonstyle" value="Window" OnClick="alert(window.status);">
+<INPUT type="button" class = "buttonstyle"value="Navigator" OnClick="alert(navigator.appVersion);">
+<INPUT type="button" class = "buttonstyle" value="Location" OnClick="alert(location.href	);">
+<INPUT type="button" class = "buttonstyle" value="Screen" OnClick="alert('Размер экрана: ' + screen.width + ' x ' + screen.height);">
+
+
+<style>
+  .image {
+    position: absolute;
+    margin: 100px 0px 0px  300px;
+    width: 30%;
+    height: 30%;
+  }
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Logitech</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+  <script type="text/javascript">alert(document.lastModified)
+function changeStyle() {
+      var p = document.getElementById("second");
+      p.style.paddingRight = "3cm";
+      p.style.textIndent = "2.5cm";
+    }
+
+    function restoreStyle() {
+      var p = document.getElementById("second");
+      p.style.paddingRight = "1.5cm";
+      p.style.textIndent = "0.7cm";
+    }
+function hideMiddleImage() {
+  var middleImage = document.getElementsByName("image2")[0];
+  middleImage.style.display = "none";
+}
+
+function showMiddleImage() {
+  var middleImage = document.getElementsByName("image2")[0];
+  middleImage.style.display = "block";
+}
+
+function swapLayers() {
+  var topImage = document.getElementsByName("image1")[0];
+  var bottomImage = document.getElementsByName("image3")[0];
+  
+  var tempZIndex = topImage.style.zIndex;
+  topImage.style.zIndex = bottomImage.style.zIndex;
+  bottomImage.style.zIndex = tempZIndex;
+}
+
+// Функция для переключения стиля при наведении и отведении мыши
+    function toggleCellStyle(cell) {
+      if (cell.classList.contains("table-cell")) {
+        cell.className = "table-cell-alternate";
+      } else {
+        cell.className = "table-cell";
+      }
+  }
+
+
+</script>
+</head>
+
+<body>
+&nbsp;<div class="text">
+    <main>
+     <h1>Компания Logitech</h1>
+         <font onmouseover="this.style.color='Yellow';this.style.fontFamily='Verdana'" onmouseout="this.style.color='white'; this.style.fontFamily='Times New Roman'; this.style.fontSize='13pt'"><p>Logitech International S.A. — швейцарская компания, производитель компьютерной периферии, устройств для геймеров и др. Штаб-квартира расположена в Лозанне (Швейцария). Название компании Logitech образовано от французского слова «logiciel», что в переводе означает «программное обеспечение».</font> <br> </p>
+ 
+	        <p id="second" onmouseover="changeStyle()" onmouseout="restoreStyle()">Компания Logitech была основана в Эпплсе, Швейцария, в 1981 году выпускниками Стэнфордского университета Даниэлем Борелем и Пьерлуиджи Заппакостой и бывшим инженером Olivetti Джакомо Марини. В течение некоторого времени в годы своего становления офисы Logitech в Кремниевой долине занимали помещение на Университетской авеню 165, Пало-Алто, Калифорния, где размещался ряд известных технологических стартапов.
+<br> </p>
+  
+        </details>&nbsp;<h2>Продукты компании</h2>
+          <p class="news"><span class="date">- Клавиатуры </p>
+          <p class="news"><span class="date">- Мыши</p>
+          <p class="news"><span class="date">- Наушники</p>
+          <p class="news"><span class="date">- Веб камеры<br> </p>
+          <p class="news"><span class="date">- Колонки<br> </p>
+	<table>
+        <tr>
+          <td class="table-cell-alternate" onmouseover="toggleCellStyle(this)" onmouseout="toggleCellStyle(this)">Табличка</td>
+          <td class="table-cell" onmouseover="toggleCellStyle(this)" onmouseout="toggleCellStyle(this)">Таблица</td>
+        </tr>
+        <tr>
+          <td class="table-cell" onmouseover="toggleCellStyle(this)" onmouseout="toggleCellStyle(this)">Table</td>
+          <td class="table-cell-alternate" onmouseover="toggleCellStyle(this)" onmouseout="toggleCellStyle(this)">Табличика</td>
+        </tr>
+      </table>
+     
+<button class = "buttonstyle" onclick="hideMiddleImage()">Скрыть рисунок</button>
+<button class = "buttonstyle" onclick="showMiddleImage()">Показать рисунки</button>
+<button class = "buttonstyle" onclick="swapLayers()">Поменять картинки</button>
+
+<img src="image1.jpg" class="image" style="z-index: 3;"img.style.paddingLeft="1.5cm"; name="image1" >
+<img src="image2.jpg" class="image" style="z-index: 2;"img.style.paddingLeft="1.5cm"; name="image2">
+<img src="image3.jpg" class="image" style="z-index: 1;"img.style.paddingLeft="1.5cm"; name="image3">
+
+</main>
+</div> 
+</body>
+</html>
